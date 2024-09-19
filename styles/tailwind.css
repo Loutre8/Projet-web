@@ -1,0 +1,88 @@
+/* styles/tailwind.css */
+
+/* Importer Tailwind CSS */
+@import url('https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css');
+
+/* Styles personnalisés */
+
+/* En-tête */
+header {
+    background-color: #1E3A8A; /* Couleur bleue foncée */
+}
+
+header a {
+    color: #ffffff; /* Texte blanc pour les liens */
+    text-decoration: none;
+}
+
+header a:hover {
+    text-decoration: underline;
+}
+
+/* Footer */
+footer {
+    background-color: #111827; /* Couleur gris très foncé */
+}
+
+/* Corps principal */
+main {
+    background-color: #f3f4f6; /* Couleur de fond très claire */
+    color: #1f2937; /* Couleur de texte gris foncé */
+}
+
+/* Formulaire */
+form {
+    border: 1px solid #d1d5db; /* Bordure grise claire */
+    border-radius: 0.5rem; /* Coins arrondis */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Ombre légère */
+}
+
+form input[type="email"],
+form input[type="password"] {
+    border: 1px solid #e5e7eb; /* Bordure très claire */
+    padding: 0.75rem; /* Espacement interne */
+    border-radius: 0.25rem; /* Coins arrondis des champs de texte */
+}
+
+form button {
+    background-color: #3b82f6; /* Couleur bleue */
+    color: #ffffff; /* Texte blanc */
+    border: none; /* Supprimer la bordure par défaut */
+    padding: 0.75rem;
+    border-radius: 0.25rem; /* Coins arrondis du bouton */
+    cursor: pointer; /* Curseur en forme de main */
+}
+
+form button:hover {
+    background-color: #2563eb; /* Couleur bleue plus foncée au survol */
+}
+
+/* Liens de navigation */
+nav a {
+    color: #ffffff;
+    padding: 0.5rem 1rem;
+    display: inline-block;
+}
+
+nav a:hover {
+    background-color: #2563eb; /* Couleur bleue plus foncée au survol */
+    border-radius: 0.25rem; /* Coins arrondis pour les liens */
+}
+/* Animation de swipe */
+@keyframes swipe-left {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100vw); opacity: 0; }
+}
+
+@keyframes swipe-right {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(100vw); opacity: 0; }
+}
+
+.swipe-left {
+    animation: swipe-left 0.5s forwards;
+}
+
+.swipe-right {
+    animation: swipe-right 0.5s forwards;
+}

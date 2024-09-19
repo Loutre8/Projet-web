@@ -1,0 +1,42 @@
+document.addEventListener('DOMContentLoaded', () => {
+    const bookCard = document.getElementById('book-card');
+    const swipeLeftButton = document.getElementById('swipe-left');
+    const swipeRightButton = document.getElementById('swipe-right');
+    
+    // Exemple de données pour les livres
+    const books = [
+        { title: 'Book 1', description: 'Description for Book 1' },
+        { title: 'Book 2', description: 'Description for Book 2' },
+        { title: 'Book 3', description: 'Description for Book 3' },
+    ];
+    
+    let currentBookIndex = 0;
+
+    function showBook(index) {
+        const book = books[index];
+        if (book) {
+            bookCard.classList.remove('swipe-left', 'swipe-right');
+            bookCard.style.opacity = '1';
+            bookCard.style.transform = 'translateX(0)';
+            document.getElementById('book-title').textContent = book.title;
+            document.getElementById('book-description').textContent = book.description;
+        }
+    }
+
+    function swipe(direction) {
+        bookCard.classList.add(`swipe-${direction}`);
+        setTimeout(() => {
+            currentBookIndex++;
+            if (currentBookIndex < books.length) {
+                showBook(currentBookIndex);
+            } else {
+                bookCard.innerHTML = '<p class="text-center">No more books.</p>';
+            }
+        }, 500); // Doit correspondre à la durée de l'animation
+    }
+
+    swipeLeftButton.addEventListener('click', () => swipe('left'));
+    swipeRightButton.addEventListener('click', () => swipe('right'));
+
+    showBook(currentBookIndex);
+});
